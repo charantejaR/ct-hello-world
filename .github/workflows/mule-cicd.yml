@@ -33,8 +33,10 @@ jobs:
 
      - name: Build with Maven
        run: mvn -B package --file pom.xml
-
-     - name: Publish to GitHub Packages Apache Maven
-       run: mvn clean install 
+     - name: Deploy to CloudHub
        env:
+        USERNAME: ${{ secrets.ANYPOINT_USERNAME }}
+        PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
+        run: mvn mule:deploy  -Denv.name="Sandbox" -Danypoint.userName=$USERNAME -Danypoint.password=$PASSWORD
         GITHUB_TOKEN: ${{ github.token }}
+    
