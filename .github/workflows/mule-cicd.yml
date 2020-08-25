@@ -1,6 +1,6 @@
 # This workflow will build a MuleSoft project and deploy to CloudHub
 
-name: Mule CICD
+name: MuleCICD
 
 on:
   push:
