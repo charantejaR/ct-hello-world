@@ -37,6 +37,6 @@ jobs:
        env:
         USERNAME: ${{ secrets.ANYPOINT_USERNAME }}
         PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
-        run: mvn mule:deploy  -Denv.name="Sandbox" -Danypoint.userName=$USERNAME -Danypoint.password=$PASSWORD
+        run: mvn mule:deploy -Denv.name="Sandbox" -Danypoint.userName=$USERNAME -Danypoint.password=$PASSWORD
         GITHUB_TOKEN: ${{ github.token }}
     
