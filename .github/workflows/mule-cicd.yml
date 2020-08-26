@@ -32,10 +32,7 @@ jobs:
 
      - name: Build with Maven
        run: mvn -B package --file pom.xml
-     - name: Publish to GitHub Packages Apache Maven
-       run: mvn mule:deploy  -Denv.name="Sandbox" -Danypoint.userName="teja_c" -Danypoint.password="CharaN@123"
-       env:
-        GITHUB_TOKEN: ${{ github.token }}
+ 
     
   deploy:
     needs: build
