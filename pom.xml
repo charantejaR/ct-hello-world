@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.charan</groupId>
-	<artifactId>ct-hello-world</artifactId>
+	<artifactId>ct-hello-world-test-mule</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
