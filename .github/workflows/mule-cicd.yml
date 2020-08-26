@@ -18,14 +18,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: maven-settings-xml-action
-      uses: whelk-io/maven-settings-xml-action@v4
-      with:
-        repositories: '[{ "id": "exchange-repository", "name": "Exchange Repository", "url": "https://maven.anypoint.mulesoft.com/api/v1/organizations/b98c32e8-d191-45e2-b771-be0bb518521c/maven", "releases": { "enabled": "true" }, "snapshots": { "enabled": "false" } }]'
-        plugin_repositories: '[{ "id": "mulesoft-releases", "name": "MuleSoft Releases Repository", "url": "http://repository.mulesoft.org/releases/", "releases": { "enabled": "true" }, "snapshots": { "enabled": "false" }}]'
-        servers: '[{ "id": "exchange-repository", "username": "teja_c", "password": "CharaN@123" }]'
-          #mirrors: '[{ "id": "nexus", "mirrorOf": "!my-org-snapshots,*", "url": "http://redacted/nexus/content/groups/public" }]'
-          #profiles: '[{ "id": "foo.profile", "name": "foo.profile", "url": "http://foo.bar.profile", "properties": { "foo": "property-1", "bar": "property-2"} }]'   
+ 
     - name: Build
       run: mvn -B package --file pom.xml
     - name: Stamp artifact file name with commit hash
