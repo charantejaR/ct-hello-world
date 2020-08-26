@@ -35,9 +35,7 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
-     - uses: actions/download-artifact@master
-       with:
-        name: artifacts
+   
      - name: Build with Maven
        run: mvn -B package --file pom.xml
      - name: Stamp artifact file name with commit hash
