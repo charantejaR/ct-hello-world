@@ -64,12 +64,12 @@
 			<version>1.2.0</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>b98c32e8-d191-45e2-b771-be0bb518521c</groupId>
 			<artifactId>audit-logging-extension</artifactId>
 			<version>1.2.1</version>
 			<classifier>mule-plugin</classifier>
-		</dependency>
+		</dependency> !-->
 
 
 
