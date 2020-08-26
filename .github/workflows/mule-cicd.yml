@@ -38,20 +38,13 @@ jobs:
       with:
           name: artifacts
           path: target/*.jar
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:    
-    - uses: actions/checkout@v2
-   
     - uses: actions/download-artifact@master
       with:
         name: artifacts
     - name: Deploy to CloudHub
       env:
-        USERNAME: ${{ secrets.username }}
-        PASSWORD: ${{ secrets.password }}
+        USERNAME: ${{ secrets.ANYPOINT_USERNAME }}
+        PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn mule:deploy -Dmule.artifact=$artifactName -Denv.name="Sandbox" -Danypoint.userName="$USERNAME" -Danypoint.password="$PASSWORD" -X
+        mvn mule:deploy -Dmule.artifact=$artifactName -Denv.name="Sandbox" -Danypoint.userName=$USERNAME -Danypoint.password=$PASSWORD
